@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pharmaceutical Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            margin: 0;
+            background: linear-gradient(120deg, #e6ecff 0%, #f8fbff 100%);
+            min-height: 100vh;
+        }
+        .header-bar {
+            background: #1877d7;
+            color: #fff;
+            padding: 18px 0 18px 0;
+            text-align: left;
+            padding-left: 60px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 10px rgba(24,119,215,0.06);
+        }
+        .header-bar i {
+            margin-right: 16px;
+            color: #fff;
+        }
+        .container {
+            margin: 40px 2vw;
+            max-width: 96vw;
+        }
+        .card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(80,120,200,0.12);
+            padding: 36px 22px 18px 22px;
+            margin-top: 36px;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 12px 40px 0 rgba(80,120,200,0.16);
+        }
+        table {
+            border-collapse: collapse; 
+            width: 100%; 
+            margin-top: 12px;
+        }
+        th, td {
+            border: 1px solid #e5e5e5;
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 1rem;
+        }
+        th {
+            background: #f0f5fa;
+            font-weight: bold;
+            color: #1877d7;
+        }
+        tr {
+            transition: background 0.18s;
+        }
+        tr:hover {
+            background: #f3f8fe;
+        }
+        @media (max-width: 700px) {
+            .container { margin: 8vw 2vw; }
+            .card { padding: 14px 4vw 8px 4vw; }
+            table, thead, tbody, th, td, tr { display: block; }
+            th, td { 
+                border: none; 
+                padding: 10px 0;
+            }
+            th { background: none; }
+            tr { margin-bottom: 1.2em; }
+            td:before {
+                content: attr(data-label);
+                font-weight: bold;
+                display: block;
+                color: #1877d7;
+                margin-bottom: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <i class="fa-solid fa-capsules"></i>
+        Pharmaceutical Products
+    </div>
+    <div class="container">
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Usage Instructions</th>
+                        <th>Safety Precautions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr th:each="product : ${products}">
+                    <td th:text="${product.name}" data-label="Name"></td>
+                    <td th:text="${product.description}" data-label="Description"></td>
+                    <td th:text="${product.usageInstructions}" data-label="Usage Instructions"></td>
+                    <td th:text="${product.safetyPrecautions}" data-label="Safety Precautions"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
