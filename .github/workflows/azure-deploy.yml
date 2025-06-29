@@ -41,12 +41,14 @@ jobs:
         run: |
           docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:latest
 
-      - name: 'Deploy to Azure Web App'
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'celebal-pharma-app'
-          publish-profile: ''
           images: ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:latest
           slot-name: 'production'
-          # Use Azure credentials for deployment
-          azure-rm-credentials: ${{ secrets.AZURE_CREDENTIALS }}
