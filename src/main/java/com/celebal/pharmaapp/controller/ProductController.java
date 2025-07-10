@@ -18,8 +18,8 @@ public class ProductController {
     new Product(5L, "Metformin", "Medication for type 2 diabetes.", "Take 1 tablet with meals twice daily.", "Monitor blood sugar. Not for type 1 diabetes."),
     new Product(6L, "Azithromycin", "Antibiotic for respiratory infections.", "Take 1 tablet daily for 3 days.", "Complete full course. May cause stomach upset."),
     new Product(7L, "Loratadine", "Antihistamine for hay fever and allergies.", "Take 1 tablet once daily.", "Consult doctor if pregnant."),
-    new Product(8L, "Omeprazole", "Proton pump inhibitor for acid reflux.", "Take 1 capsule before breakfast.", "Do not crush or chew capsules.")
-    
+    new Product(8L, "Omeprazole", "Proton pump inhibitor for acid reflux.", "Take 1 capsule before breakfast.", "Do not crush or chew capsules."),
+    new Product(9L, "test", "test case", "test case", "test case")
     );
 
     @GetMapping
