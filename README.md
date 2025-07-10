@@ -21,9 +21,3 @@ Clone the repo:
 git clone https://github.com/vanshtarar4/Celebal_Project.git
 cd Celebal_Project
 ```
-
-## CI/CD Status
-<!-- CI/CD badge will go here once workflow is set up -->
-
-## License
-MIT
