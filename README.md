@@ -1,4 +1,4 @@
-# Celebal_Project
+# Celebal_Project By Vansh Tarar
 
 A Spring Boot Java Application with automated CI/CD deployment to Azure App Service using GitHub Actions.
 
